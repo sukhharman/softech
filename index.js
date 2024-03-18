@@ -20,6 +20,9 @@ const deleteCourse =require('./controller/deleteCourse')
 const getUser =require('./controller/getuser')
 const postUser =require('./controller/insertuser')
 
+
+const token = require ('./controller/login')
+
 const app = express();
 
 app.use(express.json());
@@ -49,6 +52,11 @@ app.delete('/deleteCourse', deleteCourse)
 
 app.get('/getUser', getUser)
 app.post('/postuser', postUser)
+
+
+app.get('gettoken' , token)
+
+
 
 
 const port = 3000;
